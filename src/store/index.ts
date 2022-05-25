@@ -2,8 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-   user:[],
-   id:1
+   users:[] as any,
+   id:0
   },
   getters: {
   
@@ -11,10 +11,15 @@ export default createStore({
   mutations: {
     IncId(state){
       state.id++
+    },
+    setUser(state,user){
+      state.users.push(user);
     }
   },
   actions: {
-    
+    register({commit},user){
+      commit("setUser",user)
+    }
   },
   modules: {
   }

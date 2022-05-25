@@ -21,15 +21,16 @@
 
 <script lang="ts">
 import Datepicker from "@vuepic/vue-datepicker";
-import { Options, Vue } from "vue-class-component";
+import { Options, Vue, } from "vue-class-component";
 @Options({
   components: {
     Datepicker,
   },
 })
+
 export default class UserAge extends Vue {
   public dateofbirth: any = new Date();
-
+  
   calculateAge() {
     var current = new Date();
     var age = current.getFullYear() - this.dateofbirth.getFullYear();
@@ -38,6 +39,12 @@ export default class UserAge extends Vue {
       age--;
     }
     return age;
+  }
+  myDate(){
+    this.$emit("myDate",this.dateofbirth.toLocaleDateString());
+  }
+  mounted(){
+    this.myDate()
   }
 }
 </script>

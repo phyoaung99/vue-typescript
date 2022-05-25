@@ -1,5 +1,6 @@
 <template>
   <h1>User Lists</h1>
+  {{$store.state.users}}
   <router-link class="btn btn-sm btn-primary" :to="{ path: 'createuser',id:$store.state.id}" @click="incrementId()">Create New User</router-link>
 </template>
 
