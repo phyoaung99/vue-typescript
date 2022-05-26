@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row mt-3">
       <div class="col-md-8 mx-auto">
-        <h1 class="mb-3">Create User</h1>
+        <h1 class="mb-3">User Registeration</h1>
         <form @submit.prevent="registerMode == true ? register() : confirm()">
           <div class="input-group mb-3">
             <label for="" class="col-sm-2 col-form-label">ID :</label>
@@ -146,9 +146,9 @@ export default class CreateUser extends Vue {
     } else {
       this.get_id = "000" + (store.state.id + 1);
     }
-    this.user.id ="000"+ store.state.id
+    this.user.id = "000" + store.state.id;
 
-    return this.get_id
+    return this.get_id;
   }
 
   myDate(date: string): void {
@@ -227,5 +227,13 @@ input {
 }
 .dp__menu {
   height: 350px;
+}
+.dp__select {
+    color: var(--dp-success-color);
+    padding: 4px;
+    background: #000;
+}
+.dp__cancel {
+    color: var(--dp-primary-color);
 }
 </style>

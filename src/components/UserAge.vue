@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="input-group mb-3">
-      <label for="" class="col-sm-2">Date of birth</label>
+      <label for="" class="col-sm-2">Date of birth : </label>
       <Datepicker
         v-model="dateofbirth"
         class="form-control ps-3 pe-0 border-0"
@@ -9,7 +9,7 @@
       ></Datepicker>
     </div>
     <div class="input-group mb-3">
-      <label for="" class="col-sm-2">Age</label>
+      <label for="" class="col-sm-2">Age :</label>
       <input
         type="number"
         class="col-sm-6 ms-3 form-control"

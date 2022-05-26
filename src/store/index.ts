@@ -1,25 +1,21 @@
-import { useSSRContext } from 'vue';
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
-   users:[] as any,
-   id:0
+    users: [] as any,
+    id: 0,
   },
-  getters: {
-  
-  },
+  getters: {},
   mutations: {
-    setUser(state,user){
+    SET_USER(state, user) {
       state.users.push(user);
-      state.id +=1
-    }
+      state.id += 1;
+    },
   },
   actions: {
-    register({commit},user){
-      commit("setUser",user)
-    }
+    register({ commit }, user) {
+      commit("SET_USER", user);
+    },
   },
-  modules: {
-  }
-})
+  modules: {},
+});
