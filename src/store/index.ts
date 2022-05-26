@@ -1,3 +1,4 @@
+import { useSSRContext } from 'vue';
 import { createStore } from 'vuex'
 
 export default createStore({
@@ -9,11 +10,9 @@ export default createStore({
   
   },
   mutations: {
-    IncId(state){
-      state.id++
-    },
     setUser(state,user){
       state.users.push(user);
+      state.id +=1
     }
   },
   actions: {

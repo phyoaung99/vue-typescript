@@ -4,16 +4,17 @@
       <label for="" class="col-sm-2">Date of birth</label>
       <Datepicker
         v-model="dateofbirth"
-        @change="calculateAge"
-        class="form-control ps-3 border-0"
+        class="form-control ps-3 pe-0 border-0"
+        v-bind:value="myDate()"
       ></Datepicker>
     </div>
     <div class="input-group mb-3">
       <label for="" class="col-sm-2">Age</label>
       <input
-        type="text"
+        type="number"
         class="col-sm-6 ms-3 form-control"
-        v-bind:value="calculateAge()"
+        v-bind:value="calAge()"
+        disabled
       />
     </div>
   </div>
@@ -21,17 +22,15 @@
 
 <script lang="ts">
 import Datepicker from "@vuepic/vue-datepicker";
-import { Options, Vue, } from "vue-class-component";
+import { Options, Vue } from "vue-class-component";
 @Options({
   components: {
     Datepicker,
   },
 })
-
 export default class UserAge extends Vue {
   public dateofbirth: any = new Date();
-  
-  calculateAge() {
+  calAge() {
     var current = new Date();
     var age = current.getFullYear() - this.dateofbirth.getFullYear();
     var m = current.getMonth() - this.dateofbirth.getMonth();
@@ -40,11 +39,12 @@ export default class UserAge extends Vue {
     }
     return age;
   }
-  myDate(){
-    this.$emit("myDate",this.dateofbirth.toLocaleDateString());
+  myDate(): void {
+    const date = this.dateofbirth.toLocaleDateString();
+    this.$emit("myDate", date);
   }
-  mounted(){
-    this.myDate()
+  mounted() {
+    this.myDate();
   }
 }
 </script>
