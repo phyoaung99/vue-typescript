@@ -28,7 +28,7 @@ import { Options, Vue } from "vue-class-component";
     Datepicker,
   },
 })
-export default class UserAge extends Vue {
+export default class CalculateAge extends Vue {
   public dateofbirth: any = new Date();
   calAge(): number {
     var current = new Date();

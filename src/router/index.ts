@@ -12,8 +12,8 @@ const routes: Array<RouteRecordRaw> = [
   }
   ,
   {
-    path: '/userage',
-    name: 'userage',
+    path: '/calculateAge',
+    name: 'calculateAge',
     component: () => import('../components/CalculateAge.vue')
   }
 ]

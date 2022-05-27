@@ -1,8 +1,6 @@
 <template>
   <h1>User Lists</h1>
-  <router-link
-    class="btn btn-sm btn-primary"
-    :to="{ path: 'createuser', id: $store.state.id }"
+  <router-link class="btn btn-sm btn-primary" :to="{ name: 'createuser' }"
     >Create New User</router-link
   >
   <table class="table mt-3">
