@@ -72,7 +72,10 @@
               :disabled="disabled"
             ></textarea>
           </div>
-          <user-age @myDate="myDate" v-show="componentHide"></user-age>
+          <calculate-age
+            @myDate="myDate"
+            v-show="componentHide"
+          ></calculate-age>
           <div class="input-group mb-3">
             <label for="" class="col-sm-2 col-form-label">User Role :</label>
             <select
@@ -110,10 +113,10 @@
 <script lang="ts">
 import store from "@/store";
 import { Options, Vue } from "vue-class-component";
-import UserAge from "../components/UserAge.vue";
+import CalculateAge from "../components/CalculateAge.vue";
 @Options({
   components: {
-    UserAge,
+    CalculateAge,
   },
 })
 export default class CreateUser extends Vue {
@@ -125,20 +128,19 @@ export default class CreateUser extends Vue {
     role: "" as string,
     address: "" as string,
     email: "" as string,
-  } as any;
-
-  public get_id = 0 as number | string;
+  };
 
   public errors = {
     username_err: "" as string,
     email_err: "" as string,
   };
 
-  disabled = Boolean(false);
-  public componentHide = Boolean(true);
-  public registerMode = Boolean(false);
-  public backMode = Boolean(false);
-  public id_disabled = Boolean(true);
+  private get_id = 0 as number | string;
+  private disabled = false as boolean;
+  private componentHide = true as boolean;
+  private registerMode = false as boolean;
+  private backMode = false as boolean;
+  private id_disabled = true as boolean;
 
   getId() {
     if (store.state.id == 0) {
@@ -229,11 +231,11 @@ input {
   height: 350px;
 }
 .dp__select {
-    color: var(--dp-success-color);
-    padding: 4px;
-    background: #000;
+  color: var(--dp-success-color);
+  padding: 4px;
+  background: #000;
 }
 .dp__cancel {
-    color: var(--dp-primary-color);
+  color: var(--dp-primary-color);
 }
 </style>

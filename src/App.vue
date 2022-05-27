@@ -1,17 +1,13 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 <script lang="ts">
-import {Options, Vue} from 'vue-class-component';
+import { Options, Vue } from "vue-class-component";
 
 @Options({
-  components:{
-    
-  }
+  components: {},
 })
-export default class App extends Vue{
-  
-}
+export default class App extends Vue {}
 </script>
 
 <style>

@@ -1,8 +1,11 @@
 import { createStore } from "vuex";
-
-export default createStore({
+export interface State {
+  users: string[];
+  id: number;
+}
+export default createStore<State>({
   state: {
-    users: [] as any,
+    users: [],
     id: 0,
   },
   getters: {},
@@ -13,8 +16,8 @@ export default createStore({
     },
   },
   actions: {
-    register({ commit }, user) {
-      commit("SET_USER", user);
+    register(context, user) {
+      context.commit("SET_USER", user);
     },
   },
   modules: {},

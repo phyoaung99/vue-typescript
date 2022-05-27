@@ -3,7 +3,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'list',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ListView.vue')
+    component: () => import(/* webpackChunkName: "userlist" */ '../views/ListView.vue')
   },
   {
     path: '/createuser',
@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/userage',
     name: 'userage',
-    component: () => import('../components/UserAge.vue')
+    component: () => import('../components/CalculateAge.vue')
   }
 ]
 

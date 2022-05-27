@@ -30,7 +30,7 @@ import { Options, Vue } from "vue-class-component";
 })
 export default class UserAge extends Vue {
   public dateofbirth: any = new Date();
-  calAge() {
+  calAge(): number {
     var current = new Date();
     var age = current.getFullYear() - this.dateofbirth.getFullYear();
     var m = current.getMonth() - this.dateofbirth.getMonth();
@@ -39,7 +39,7 @@ export default class UserAge extends Vue {
     }
     return age;
   }
-  myDate(): void {
+  myDate(): string | void {
     const date = this.dateofbirth.toLocaleDateString();
     this.$emit("myDate", date);
   }
