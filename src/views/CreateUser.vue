@@ -114,7 +114,7 @@
 import store from "@/store";
 import { Options, Vue } from "vue-class-component";
 import CalculateAge from "../components/CalculateAge.vue";
-import { Users, Error } from "../types/users";
+import { Users, Error } from "../types";
 @Options({
   components: {
     CalculateAge,
