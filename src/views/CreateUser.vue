@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="row mt-3">
+    <div class="row mt-2">
       <div class="col-md-8 mx-auto">
-        <h1 class="mb-3">User Registeration</h1>
+        <!-- <h1 class="mb-3">User Registeration</h1> -->
         <form @submit.prevent="registerMode == true ? register() : confirm()">
           <div class="input-group mb-3">
             <label for="" class="col-sm-2 col-form-label">ID :</label>
@@ -24,7 +24,7 @@
             />
           </div>
           <p class="text-danger">{{ errors.username_err }}</p>
-          <div class="input-group mb-3">
+          <div class="input-group mb-1">
             <label for="" class="col-sm-2 col-form-label">Gender :</label>
             <div class="ms-5 form-check form-check-inline">
               <input
@@ -63,20 +63,6 @@
           </div>
           <p class="text-danger">{{ errors.email_err }}</p>
           <div class="input-group mb-3">
-            <label for="" class="col-sm-2 col-form-label">Address :</label>
-            <textarea
-              rows="2"
-              cols="5"
-              class="form-control ms-3 col-sm-6"
-              v-model="user.address"
-              :disabled="disabled"
-            ></textarea>
-          </div>
-          <calculate-age
-            @myDate="myDate"
-            v-show="componentHide"
-          ></calculate-age>
-          <div class="input-group mb-3">
             <label for="" class="col-sm-2 col-form-label">User Role :</label>
             <select
               name=""
@@ -90,6 +76,22 @@
               <option value="Guest">Guest</option>
               <option value="User">User</option>
             </select>
+          </div>
+          <div>
+            <calculate-age
+            @myDate="myDate"
+            v-show="componentHide"
+          ></calculate-age>
+          </div>
+          <div class="input-group mb-3">
+            <label for="" class="col-sm-2 col-form-label">Address :</label>
+            <textarea
+              rows="4"
+              cols="5"
+              class="form-control ms-3 col-sm-6"
+              v-model="user.address"
+              :disabled="disabled"
+            ></textarea>
           </div>
           <!-- {{user.dateofbirth}} -->
           <div class="btn-group float-end">
@@ -229,14 +231,24 @@ input {
   display: inline-block;
 }
 .dp__menu {
-  height: 350px;
+  height: 340px;
 }
 .dp__select {
   color: var(--dp-success-color);
-  padding: 4px;
+  padding: 2px;
   background: #000;
 }
 .dp__cancel {
   color: var(--dp-primary-color);
+}
+.dp__button {
+  visibility: hidden;
+}
+.dp__button {
+  margin-top: -30px;
+}
+.dp__cell_inner {
+  height: 30px;
+  padding: 3px;
 }
 </style>
