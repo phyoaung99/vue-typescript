@@ -3,6 +3,7 @@ export interface State {
   users: string[];
   id: number;
 }
+
 export default createStore<State>({
   state: {
     users: [],

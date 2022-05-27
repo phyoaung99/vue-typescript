@@ -114,25 +114,26 @@
 import store from "@/store";
 import { Options, Vue } from "vue-class-component";
 import CalculateAge from "../components/CalculateAge.vue";
+import { Users, Error } from "../types/users";
 @Options({
   components: {
     CalculateAge,
   },
 })
 export default class CreateUser extends Vue {
-  public user = {
-    id: 0 as number | string,
-    dateofbirth: "" as string,
-    username: "" as string,
-    gender: "" as string,
-    role: "" as string,
-    address: "" as string,
-    email: "" as string,
+  user: Users = {
+    id: 0,
+    dateofbirth: "",
+    username: "",
+    gender: "",
+    role: "",
+    address: "",
+    email: "",
   };
 
-  public errors = {
-    username_err: "" as string,
-    email_err: "" as string,
+  errors: Error = {
+    username_err: "",
+    email_err: "",
   };
 
   private get_id = 0 as number | string;
